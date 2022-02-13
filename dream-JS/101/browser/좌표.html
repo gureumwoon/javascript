@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coordinates</title>
+    <style>
+        body {
+            background-color: black;
+            /* overflow: hidden; 스크롤 안 되게 하려면 */
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            background-color: blanchedalmond;
+        }
+
+        .point {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="point"></div>
+    <div></div>
+    <div></div>
+    <script>
+        const point = document.querySelector('.point');
+        point.addEventListener('click', (event) => {
+            const rect = point.getBoundingClientRect();
+            console.log(rect);
+            console.log(`client:${event.clientX},${event.clientY}`);
+            console.log(`page:${event.pageX},${event.pageY}`);
+        })
+    </script>
+</body>
+
+</html>
